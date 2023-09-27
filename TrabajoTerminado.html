@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi presentacion</title>
+    <link href="css/fondo.css" rel="stylesheet"/>
+</head>
+<body>
+    <h2><center>Presentación personal:</center></h2>
+    <p>Me llamo Alan Bruce Parrillo Gutierrez 
+        y tengo 18 años </p>
+        <div><img src="20200426_151338.jpg" alt="alanp" style="width: 120px" border="5"></div>
+    <h3><center>Sobre mi:</center></h3>
+    <p>Me gusta escuchar música para poder relajarme y actualmente
+        practico el deporte de la natación</p>
+    <table border="1">
+        <tr>
+            <th>Lenguajes de Programación</th>
+            <th>Experiencia en los lenguajes</th>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>intermedio</td>
+        </tr>
+        <tr>
+            <td>Java</td>
+            <td>Intermedio</td>
+        </tr>
+        <tr>
+            <td>Javascipt</td>
+            <td>Basico</td>
+        </tr>
+    </table>
+    <h3><center>Formación profesional:</center></h3>
+    <p>Soy un estudiante de TECSUP y me encuentro
+        cursando el tercer ciclo <br> en la carrera de Diseño y
+        desarrollo de software</p>
+    <h3><center>Idiomas:</center></h3>
+    <p>- Español </p>
+    <p>- Ingles basico</p>
+
+    <h1>Mis Gustos</h1>
+    
+    <form id="preferencesForm">
+        <h2>Comida</h2>
+        <label>
+            <input type="checkbox" name="comida" value="vegetariana"> Vegetariana
+        </label>
+        <label>
+            <input type="checkbox" name="comida" value="vegana"> Vegana
+        </label>
+        <label>
+            <input type="checkbox" name="comida" value="sinGluten"> Sin Gluten
+        </label>
+
+        <h2>Ropa</h2>
+        <label>
+            <input type="checkbox" name="ropa" value="casual"> Casual
+        </label>
+        <label>
+            <input type="checkbox" name="ropa" value="formal"> Formal
+        </label>
+        <label>
+            <input type="checkbox" name="ropa" value="deportiva"> Deportiva
+        </label>
+
+        <h2>Lugares Favoritos</h2>
+        <label>
+            <input type="checkbox" name="lugares" value="playa"> Playa
+        </label>
+        <label>
+            <input type="checkbox" name="lugares" value="montaña"> Montaña
+        </label>
+        <label>
+            <input type="checkbox" name="lugares" value="ciudad"> Ciudad
+        </label>
+
+        <button type="button" id="submitButton">Guardar Preferencias</button>
+    </form>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            const comidaPreferences = [];
+            const ropaPreferences = [];
+            const lugaresPreferences = [];
+
+            const comidaCheckboxes = document.getElementsByName("comida");
+            for (const checkbox of comidaCheckboxes) {
+                if (checkbox.checked) {
+                    comidaPreferences.push(checkbox.value);
+                }
+            }
+
+            const ropaCheckboxes = document.getElementsByName("ropa");
+            for (const checkbox of ropaCheckboxes) {
+                if (checkbox.checked) {
+                    ropaPreferences.push(checkbox.value);
+                }
+            }
+
+            const lugaresCheckboxes = document.getElementsByName("lugares");
+            for (const checkbox of lugaresCheckboxes) {
+                if (checkbox.checked) {
+                    lugaresPreferences.push(checkbox.value);
+                }
+            }
+
+            alert(`Tus preferencias de comida: ${comidaPreferences.join(", ")}`);
+            alert(`Tus preferencias de ropa: ${ropaPreferences.join(", ")}`);
+            alert(`Tus lugares favoritos: ${lugaresPreferences.join(", ")}`);
+        });
+    </script>
+</body>
+
+</html>
